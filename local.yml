@@ -7,10 +7,13 @@
     - name: Print message
       debug:
         msg: Hello Ansible World
+
+    - name: get the username running the deploy
+      become: false
+      local_action: command whoami
     
-    - block: 
+    - community.general.homebrew:
+        name: asciidoctor
+        state: present
       become: true
       become_user: robertcotter
-        - community.general.homebrew:
-            name: asciidoctor
-            state: present
