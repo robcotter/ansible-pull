@@ -10,10 +10,10 @@
 
     - name: get the username running the deploy
       become: false
-      local_action: command whoami
+      debug: msg="{{ lookup('env','USER') }}"
     
-    - community.general.homebrew:
-        name: asciidoctor
-        state: present
-      become: true
-      become_user: robertcotter
+    # - community.general.homebrew:
+    #     name: asciidoctor
+    #     state: present
+    #   become: true
+    #   become_user: robertcotter
