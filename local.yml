@@ -20,6 +20,6 @@
     #     state: present
     
     - name: Copy file with owner and permissions
-        ansible.builtin.copy:
-          src: /files/foo.txt
-          dest: ~/Desktop/
+      ansible.builtin.copy:
+        src: /files/foo.txt
+        dest: ~/Desktop/
