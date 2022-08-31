@@ -16,7 +16,7 @@
 
     - name: Download Packages
       become: true
-      become_user: robertcotter
+      become_user: "{{ remote_user }}"
       package:
         name: "{{ brew_items }}"
         state: present
