@@ -28,7 +28,7 @@
       become: true
       become_user: robertcotter
       package:
-        name: asciidoctor
+        name: "{{ brew_items }}"
         state: present
     
     - name: Copy file

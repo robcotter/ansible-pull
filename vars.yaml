@@ -1,2 +1,6 @@
 ---
 remote_user: robertcotter
+
+brew_items:
+  - asciidoctor
+  - ddgr
