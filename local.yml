@@ -19,7 +19,9 @@
     #     name: asciidoctor
     #     state: present
     
-    - name: Copy file with owner and permissions
-      ansible.builtin.copy:
-        src: /files/foo.txt
+    - name: Copy file 
+      copy:
+        src: files/foo.txt
         dest: ~/Desktop/
+        owner: root
+        group: root
