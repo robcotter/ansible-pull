@@ -22,6 +22,6 @@
     - name: Copy file 
       copy:
         src: files/foo.txt
-        dest: ~/Desktop/
+        dest: /Users/robertcotter/Desktop
         # owner: root
         # group: root
