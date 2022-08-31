@@ -11,6 +11,11 @@
     - name: Get the username running the deploy
       become: false
       debug: msg="{{ lookup('env','USER') }}"
+
+    - name: Check username altered
+      become: true
+      become_user: robertcotter
+      debug: msg="{{ lookup('env','USER') }}"
     
     - name: Download asciidoctor
       become: true
