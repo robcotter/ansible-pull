@@ -12,10 +12,14 @@
       become: false
       debug: msg="{{ lookup('env','USER') }}"
     
-    - name: Download asciidoctor
-      become: true
-      become_user: robertcotter
-      community.general.homebrew:
-        name: asciidoctor
-        state: present
-      
+    # - name: Download asciidoctor
+    #   become: true
+    #   become_user: robertcotter
+    #   community.general.homebrew:
+    #     name: asciidoctor
+    #     state: present
+    
+    - name: Copy file with owner and permissions
+        ansible.builtin.copy:
+          src: /files/foo.txt
+          dest: ~/Desktop/
