@@ -8,14 +8,13 @@
       debug:
         msg: Hello Ansible World
 
-    - name: get the username running the deploy
+    - name: Get the username running the deploy
       become: false
       debug: msg="{{ lookup('env','USER') }}"
     
-    - name: download asciidoctor
+    - name: Download asciidoctor
       become: true
       become_user: robertcotter
-      debug: msg="{{ lookup('env','USER') }}"
       community.general.homebrew:
         name: asciidoctor
         state: present
