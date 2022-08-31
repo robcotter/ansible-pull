@@ -22,7 +22,8 @@
     #     name: asciidoctor
     #     state: present
     
-    - name: Copy file 
+    - name: Copy file
+      include_vars: vars.yaml
       remote_user: "{{ remote_user }}"
       copy:
         src: files/foo.txt
