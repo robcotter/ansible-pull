@@ -23,7 +23,7 @@
     #     state: present
     
     - name: Copy file 
-      remote_user: {{ remote_user }}
+      remote_user: "{{ remote_user }}"
       copy:
         src: files/foo.txt
         dest: ~/Desktop
