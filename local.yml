@@ -20,7 +20,7 @@
     #     state: present
     
     - name: Copy file 
-      copy:
+      fetch:
         src: files/foo.txt
         dest: ~/Desktop/
         # owner: root
