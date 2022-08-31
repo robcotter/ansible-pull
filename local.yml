@@ -1,6 +1,7 @@
 ---
 - hosts: localhost
   connection: local
+  become: true
 
   tasks:
     - name: Print message
@@ -8,7 +9,5 @@
         msg: Hello Ansible World
     
     - community.general.homebrew:
-        become: true
-        become_user: robertcotter
         name: asciidoctor
         state: present
