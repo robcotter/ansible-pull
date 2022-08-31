@@ -26,6 +26,6 @@
       remote_user: "{{ remote_user }}"
       copy:
         src: files/foo.txt
-        dest: ~/Desktop
+        dest: /Users/{{ remote_user }}/Desktop
         # owner: root
         # group: root
