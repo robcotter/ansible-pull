@@ -8,7 +8,7 @@
 
   tasks:
     - include_vars: vars.yaml
-    
+
     - name: Print message
       debug:
         msg: Hello Ansible World
@@ -17,17 +17,22 @@
       become: false
       debug: msg="{{ lookup('env','USER') }}"
     
-    # - name: Download asciidoctor
+    # - name: Download Packages
     #   become: true
     #   become_user: robertcotter
     #   community.general.homebrew:
     #     name: asciidoctor
     #     state: present
+
+    - name: Download Packages
+      become: true
+      become_user: robertcotter
+      package:
+        name: asciidoctor
+        state: present
     
     - name: Copy file
       remote_user: "{{ remote_user }}"
       copy:
         src: files/foo.txt
         dest: /Users/{{ remote_user }}/Desktop
-        # owner: root
-        # group: root
