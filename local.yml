@@ -3,9 +3,6 @@
   connection: local
   become: true
 
-  # vars:
-  #   remote_user: robertcotter
-
   tasks:
     - include_vars: vars.yaml
 
@@ -16,13 +13,6 @@
     - name: Get the username running the deploy
       become: false
       debug: msg="{{ lookup('env','USER') }}"
-    
-    # - name: Download Packages
-    #   become: true
-    #   become_user: robertcotter
-    #   community.general.homebrew:
-    #     name: asciidoctor
-    #     state: present
 
     - name: Download Packages
       become: true
@@ -31,7 +21,7 @@
         name: "{{ brew_items }}"
         state: present
     
-    - name: Copy file
+    - name: Copy test file
       remote_user: "{{ remote_user }}"
       copy:
         src: files/foo.txt
