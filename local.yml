@@ -3,6 +3,9 @@
   connection: local
   become: true
 
+  vars:
+    remote_user: robertcotter
+
   tasks:
     - name: Print message
       debug:
@@ -20,6 +23,7 @@
     #     state: present
     
     - name: Copy file 
+      remote_user: {{ remote_user }}
       copy:
         src: files/foo.txt
         dest: ~/Desktop
