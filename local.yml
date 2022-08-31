@@ -11,6 +11,6 @@
     - block: 
       become: true
       become_user: robertcotter
-      - community.general.homebrew:
-          name: asciidoctor
-          state: present
+        - community.general.homebrew:
+            name: asciidoctor
+            state: present
