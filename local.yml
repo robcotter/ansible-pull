@@ -13,8 +13,8 @@
       debug: msg="{{ lookup('env','USER') }}"
     
     - name: Download asciidoctor
-      # become: true
-      # become_user: robertcotter
+      become: true
+      become_user: robertcotter
       community.general.homebrew:
         name: asciidoctor
         state: present
