@@ -12,9 +12,11 @@
       become: false
       debug: msg="{{ lookup('env','USER') }}"
     
-    - community.general.homebrew:
-        name: asciidoctor
-        state: present
+    - name: download asciidoctor
       become: true
       become_user: robertcotter
       debug: msg="{{ lookup('env','USER') }}"
+      community.general.homebrew:
+        name: asciidoctor
+        state: present
+      
