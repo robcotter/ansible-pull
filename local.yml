@@ -3,6 +3,7 @@
   connection: local
   become: true
 
+  include_vars: vars.yaml
   # vars:
   #   remote_user: robertcotter
 
@@ -23,7 +24,6 @@
     #     state: present
     
     - name: Copy file
-      include_vars: vars.yaml
       remote_user: "{{ remote_user }}"
       copy:
         src: files/foo.txt
